@@ -1,0 +1,25 @@
+<h1>Listing to_dones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @to_dones.each do |to_done| %>
+    <tr>
+      <td><%= link_to 'Show', to_done %></td>
+      <td><%= link_to 'Edit', edit_to_done_path(to_done) %></td>
+      <td><%= link_to 'Destroy', to_done, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New To done', new_to_done_path %>

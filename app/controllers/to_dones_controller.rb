@@ -1,6 +1,8 @@
 class ToDonesController < ApplicationController
+	skip_before_filter :verify_authenticity_token, :only => [:create]
   before_action :set_to_done, only: [:show, :edit, :update, :destroy]
 	respond_to :json, :html
+
   # GET /to_dones
   # GET /to_dones.json
   def index
@@ -77,6 +79,6 @@ class ToDonesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def to_done_params
-      params[:to_done]
+      params.require(:to_done).permit(:gist)
     end
 end

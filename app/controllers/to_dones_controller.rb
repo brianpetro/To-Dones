@@ -4,7 +4,15 @@ class ToDonesController < ApplicationController
   # GET /to_dones
   # GET /to_dones.json
   def index
-    @to_dones = ToDone.all
+  	@todones = ToDone.all
+    respond_to do |format|
+    	format.html do
+    		respond_with ToDone.all
+    	end
+    	format.json do
+    		render json: @todones.as_json
+    	end
+    end
   end
 
   # GET /to_dones/1

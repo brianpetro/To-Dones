@@ -1,13 +1,13 @@
 class ToDonesController < ApplicationController
   before_action :set_to_done, only: [:show, :edit, :update, :destroy]
-
+	respond_to :json, :html
   # GET /to_dones
   # GET /to_dones.json
   def index
   	@todones = ToDone.all
     respond_to do |format|
     	format.html do
-    		respond_with ToDone.all
+    		respond_with @todones
     	end
     	format.json do
     		render json: @todones.as_json

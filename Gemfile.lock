@@ -84,6 +84,10 @@ GEM
   specs:
     angularjs-rails (1.0.5)
     atomic (1.0.1)
+    bootstrap-sass (2.3.0.1)
+      sass (~> 3.2)
+    bootswatch-rails (0.4.0)
+      railties (>= 3.1)
     builder (3.1.4)
     coffee-script (2.2.0)
       coffee-script-source
@@ -145,6 +149,8 @@ DEPENDENCIES
   activerecord-deprecated_finders!
   angularjs-rails
   arel!
+  bootstrap-sass
+  bootswatch-rails
   coffee-rails!
   jbuilder (~> 1.0.1)
   pg

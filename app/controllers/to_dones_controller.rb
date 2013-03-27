@@ -6,7 +6,7 @@ class ToDonesController < ApplicationController
   # GET /to_dones
   # GET /to_dones.json
   def index
-  	@todones = ToDone.all
+  	@todones = ToDone.order("created_at DESC").each
     respond_to do |format|
     	format.html do
     		respond_with @todones

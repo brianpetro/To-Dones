@@ -1,14 +1,14 @@
 app = angular.module("Todone", ["ngResource"])
 
-app.factory "To_done", ["$resource", ($resource) ->
+app.factory "Done", ["$resource", ($resource) ->
   $resource("/to_dones", {}, {update: {method: "PUT"}})
 ]
 
-@MainCtrl = ["$scope", "To_done", ($scope, To_done) ->
-  $scope.to_dones = To_done.query()
+@MainCtrl = ["$scope", "Done", ($scope, Done) ->
+  $scope.to_dones = Done.query()
 
   $scope.addTodone = ->
-  	todone = To_done.save $scope.newTodone, ->
-			$scope.to_dones = To_done.query()
+  	todone = Done.save $scope.newTodone, ->
+			$scope.to_dones = Done.query()
 		$scope.newTodone = {}
 ]
